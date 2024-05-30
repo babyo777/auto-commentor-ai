@@ -19,7 +19,7 @@ let excludedPaths = fs
   .filter((entry) => entry !== "");
 
 excludedPaths = [
-  ...["Generated", ".exclude", "node_modules"],
+  ...["Generated", ".exclude", "node_modules", ".git"],
   ...excludedPaths,
 ];
 
@@ -87,9 +87,13 @@ const copyFilesRecursive = async (source, destination, spinner) => {
             if (GeneratedContent !== null) {
               fs.writeFileSync(destPath, GeneratedContent);
             } else {
+              spinner.text = `copying ${sourcePath}`;
+
               fs.copyFileSync(sourcePath, destPath);
             }
           } else {
+            spinner.text = `copying ${sourcePath}`;
+
             fs.copyFileSync(sourcePath, destPath);
           }
         }

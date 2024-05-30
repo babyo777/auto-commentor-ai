@@ -1,6 +1,6 @@
 {
   "name": "auto-commentor",
-  "version": "1.5.10",
+  "version": "1.5.11",
   "main": "index.js",
   "type": "module",
   "scripts": {
