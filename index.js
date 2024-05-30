@@ -1,4 +1,4 @@
-#!usr/bin/env node
+#!/usr/bin/env node
 import fs from "fs";
 import path from "path";
 import * as cli from "@clack/prompts";
@@ -104,4 +104,4 @@ async function main() {
   spinner.stop();
 }
 
-main();
+main().catch((err) => console.log(err));
