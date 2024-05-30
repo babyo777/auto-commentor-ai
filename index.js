@@ -79,9 +79,9 @@ const copyFilesRecursive = async (source, destination, spinner) => {
         if (content.length <= 7000) {
           spinner.text = `commenting ${sourcePath}`;
 
-          const commentedContent = await generateComments(content, entry.name);
-          if (commentedContent !== null) {
-            fs.writeFileSync(destPath, commentedContent);
+          const GeneratedContent = await generateComments(content, entry.name);
+          if (GeneratedContent !== null) {
+            fs.writeFileSync(destPath, GeneratedContent);
           } else {
             fs.copyFileSync(sourcePath, destPath);
           }
@@ -108,7 +108,7 @@ async function main() {
   await ensureDirExists(destDir);
   spinner.text = "Commenting...";
   await copyFilesRecursive(sourceDir, destDir, spinner);
-  spinner.text = "Commented";
+  spinner.text = "Generated";
   spinner.stop();
 }
 
