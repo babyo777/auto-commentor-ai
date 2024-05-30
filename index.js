@@ -19,7 +19,7 @@ let excludedPaths = fs
   .filter((entry) => entry !== "");
 
 excludedPaths = [
-  ...["Generated", ".exclude", "node_modules", ".git"],
+  ...["Generated", ".exclude", "node_modules", ".git", ".gitignore"],
   ...excludedPaths,
 ];
 
@@ -74,6 +74,7 @@ const copyFilesRecursive = async (source, destination, spinner) => {
             ".webm",
           ].includes(fileExtension)
         ) {
+          spinner.text = `copying ${sourcePath}`;
           fs.copyFileSync(sourcePath, destPath);
         } else {
           const content = fs.readFileSync(sourcePath, "utf8");
