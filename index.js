@@ -19,7 +19,20 @@ let excludedPaths = fs
   .filter((entry) => entry !== "");
 
 excludedPaths = [
-  ...["Generated", ".exclude", "node_modules", ".git", ".gitignore"],
+  ...[
+    "Generated",
+    ".exclude",
+    "node_modules",
+    ".git",
+    ".gitignore",
+    "tailwind.config.ts",
+    "tailwind.config.js",
+    "postcss.config.mjs",
+    "next.config.mjs",
+    ".next",
+    "dist",
+    "dev-dist",
+  ],
   ...excludedPaths,
 ];
 
@@ -68,6 +81,7 @@ const copyFilesRecursive = async (source, destination, spinner) => {
             ".mp4",
             ".avi",
             ".mkv",
+            ".css",
             ".mov",
             ".wmv",
             ".flv",
@@ -78,7 +92,7 @@ const copyFilesRecursive = async (source, destination, spinner) => {
           fs.copyFileSync(sourcePath, destPath);
         } else {
           const content = fs.readFileSync(sourcePath, "utf8");
-          if (content.length <= 7000) {
+          if (content.length <= 8000) {
             spinner.text = `commenting ${sourcePath}`;
 
             const GeneratedContent = await generateComments(
