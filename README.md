@@ -8,8 +8,6 @@ This tool automatically generates comments for your code files. By specifying a 
 
 - **Recursive File Processing**: Scans all files within the source directory, including subdirectories.
 - **File Exclusion**: Automatically excludes specified files and directories.
-- **Selective Commenting**: Comments files with specific extensions (e.g., `.js`, `.py`).
-- **Content Size Handling**: Avoids processing delays by skipping files larger than 7000 characters.
 
 ## Installation
 
