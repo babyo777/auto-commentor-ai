@@ -19,7 +19,15 @@ let excludedPaths = fs
   .filter((entry) => entry !== "");
 
 excludedPaths = [
-  ...["Generated", ".exclude", "node_modules"],
+  ...[
+    "Generated",
+    ".exclude",
+    "node_modules",
+    ".git",
+    ".gitignore",
+    ".md",
+    ".env",
+  ],
   ...excludedPaths,
 ];
 
