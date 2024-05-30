@@ -19,15 +19,7 @@ let excludedPaths = fs
   .filter((entry) => entry !== "");
 
 excludedPaths = [
-  ...[
-    "Generated",
-    ".exclude",
-    "node_modules",
-    ".git",
-    ".gitignore",
-    ".md",
-    ".env",
-  ],
+  ...["Generated", ".exclude", "node_modules"],
   ...excludedPaths,
 ];
 
@@ -62,6 +54,10 @@ const copyFilesRecursive = async (source, destination, spinner) => {
           [
             ".jpg",
             ".jpeg",
+            ".git",
+            ".gitignore",
+            ".md",
+            ".env",
             ".png",
             ".gif",
             ".bmp",
@@ -69,10 +65,14 @@ const copyFilesRecursive = async (source, destination, spinner) => {
             ".svg",
             ".json",
             ".git",
-          ].includes(fileExtension) ||
-          [".mp4", ".avi", ".mkv", ".mov", ".wmv", ".flv", ".webm"].includes(
-            fileExtension
-          )
+            ".mp4",
+            ".avi",
+            ".mkv",
+            ".mov",
+            ".wmv",
+            ".flv",
+            ".webm",
+          ].includes(fileExtension)
         ) {
           fs.copyFileSync(sourcePath, destPath);
         } else {
