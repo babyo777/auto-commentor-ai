@@ -2,7 +2,7 @@
 
 ## Overview
 
-This tool automatically generates comments for your code files. By specifying a source directory, the tool recursively scans all files and directories, excluding those specified in the `.exclude` file or predefined paths. The commented files are then saved into a specified destination directory (`./Generated/`).
+This tool automatically generates comments for your code files. By specifying a source directory, the tool recursively scans all files and directories, excluding those specified in the `.exclude` file or predefined paths. The commented files are then saved into a specified destination directory (`./Generated/`). [Example](https://x.com/Tanmay11117/status/1796344581426118729)
 
 ## Features
 
