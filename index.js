@@ -92,7 +92,7 @@ const copyFilesRecursive = async (source, destination, spinner) => {
           fs.copyFileSync(sourcePath, destPath);
         } else {
           const content = fs.readFileSync(sourcePath, "utf8");
-          if (content.length <= 8000) {
+          if (content.length <= 7700) {
             spinner.text = `commenting ${sourcePath}`;
 
             const GeneratedContent = await generateComments(
